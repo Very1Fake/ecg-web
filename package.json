@@ -10,8 +10,7 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "vite": "^4.1.1",
-    "vite-plugin-solid": "^2.5.0",
-    "vite-plugin-windicss": "^1.8.10"
+    "vite-plugin-solid": "^2.5.0"
   },
   "dependencies": {
     "@solidjs/router": "^0.7.0",
