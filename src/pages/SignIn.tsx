@@ -1,6 +1,6 @@
 import { useSignInForm } from "../utils/validation";
 
-const SignUp = () => {
+const SignIn = () => {
   const { form, updateFormField, submit, clearField } = useSignInForm();
 
   const handleSubmit = (event: Event): void => {
@@ -10,7 +10,7 @@ const SignUp = () => {
 
   return (
     <form onSubmit={handleSubmit} class="centered-children">
-      <h1>Sign Up</h1>
+      <h1>Sign In</h1>
       <div class="field-block">
         <input
           type="text"
@@ -18,15 +18,6 @@ const SignUp = () => {
           placeholder="Username"
           required
           onChange={updateFormField("username")}
-        />
-      </div>
-      <div class="field-block">
-        <input
-          name="email"
-          type="email"
-          placeholder="Email"
-          required
-          onChange={updateFormField("email")}
         />
       </div>
       <div class="field-block">
@@ -40,9 +31,9 @@ const SignUp = () => {
         />
       </div>
 
-      <button type="submit">Sign Up</button>
+      <button type="submit">Sign In</button>
     </form>
   );
 };
 
-export default SignUp;
+export default SignIn;

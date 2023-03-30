@@ -11,6 +11,7 @@ const App: Component = () => {
   const navItems = [
     ["/", "Home"],
     ["/about", "About"],
+    ["/signin", "Sign In"],
     ["/signup", "Sign Up"],
     ["/error", "Error"],
   ];
