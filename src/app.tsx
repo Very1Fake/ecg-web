@@ -13,6 +13,7 @@ const App: Component = () => {
     ["/about", "About"],
     ["/signin", "Sign In"],
     ["/signup", "Sign Up"],
+    ["/profile", "Profile"],
     ["/error", "Error"],
   ];
 
