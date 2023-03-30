@@ -1,25 +1,33 @@
-import type { Component } from "solid-js";
-import { Link, useRoutes, useLocation } from "@solidjs/router";
+import { Component, For } from "solid-js";
+import { A, useRoutes, useLocation } from "@solidjs/router";
 
 import { routes } from "./routes";
+import "../assets/style.css";
 
 const App: Component = () => {
   const location = useLocation();
   const Route = useRoutes(routes);
 
+  const navItems = [
+    ["/", "Home"],
+    ["/about", "About"],
+    ["/signup", "Sign Up"],
+    ["/error", "Error"],
+  ];
+
   return (
     <>
       <nav>
         <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/error">Error</Link>
-          </li>
+          <For each={navItems}>
+            {(item, i) => (
+              <li>
+                <A href={item[0]} activeClass="nav-link-active" end={true}>
+                  {item[1]}
+                </A>
+              </li>
+            )}
+          </For>
 
           <li>
             <span>URL:</span>
