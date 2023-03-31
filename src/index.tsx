@@ -2,20 +2,24 @@
 import { render } from "solid-js/web";
 import { Router } from "@solidjs/router";
 import App from "./app";
+import { AuthProvider } from "./utils/AuthContext";
 
-const root = document.getElementById("root");
+const rootElem = document.getElementById("root");
 
-if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
+if (import.meta.env.DEV && !(rootElem instanceof HTMLElement)) {
   throw new Error(
     "Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got mispelled?"
   );
 }
 
-render(
-  () => (
+const Root = () => {
+  return (
     <Router>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </Router>
-  ),
-  root
-);
+  );
+};
+
+render(() => <Root />, rootElem);

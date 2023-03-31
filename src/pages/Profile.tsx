@@ -1,30 +1,16 @@
 import { Component } from "solid-js";
-
-enum UserStatus {
-  Active = 0,
-  Inactive,
-  Banned,
-}
-
-type User = {
-  username: string;
-  email: string;
-  status: UserStatus;
-};
+import { useAuth } from "../utils/AuthContext";
+import { UserStatus } from "../types/User";
 
 const Profile: Component<{}> = () => {
-  const user: User = {
-    username: "very1fake",
-    email: "very1fake@example.com",
-    status: 0,
-  };
+  const [state] = useAuth();
 
   return (
     <section>
-      <h2>Profile - {user.username}</h2>
+      <h2>Profile - {state.user.username}</h2>
       <ul>
-        <li>Email: {user.email}</li>
-        <li>Status: {UserStatus[user.status]}</li>
+        <li>Email: {state.user.email}</li>
+        <li>Status: {UserStatus[state.user.status]}</li>
       </ul>
     </section>
   );

@@ -1,7 +1,7 @@
 import { useSignInForm } from "../utils/validation";
 
 const SignUp = () => {
-  const { form, updateFormField, submit, clearField } = useSignInForm();
+  const { form, updateFormField, submit } = useSignInForm();
 
   const handleSubmit = (event: Event): void => {
     event.preventDefault();

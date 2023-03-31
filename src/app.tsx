@@ -24,7 +24,7 @@ const App: Component = () => {
           <For each={navItems}>
             {(item, i) => (
               <li>
-                <A href={item[0]} activeClass="nav-link-active" end={true}>
+                <A href={item[0]} activeClass="nav-link-active" end>
                   {item[1]}
                 </A>
               </li>
