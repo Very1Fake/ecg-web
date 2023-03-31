@@ -12,10 +12,10 @@ export default function About() {
     <section>
       <h1>About</h1>
 
-      <p>A page all about this website.</p>
+      <p>Web client for ECG Hub</p>
 
       <p>
-        <span>We love</span>
+        <span>Website was created using</span>
         <Suspense fallback={<span>...</span>}>
           <span>&nbsp;{name()}</span>
         </Suspense>

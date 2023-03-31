@@ -34,7 +34,7 @@ export const routes: RouteDefinition[] = [
   // User-only routes
   {
     path: "",
-    component: UserRoute,
+    // component: UserRoute,
     children: [
       {
         path: "/profile",

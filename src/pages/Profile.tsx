@@ -1,16 +1,16 @@
 import { Component } from "solid-js";
 import { useAuth } from "../utils/AuthContext";
-import { UserStatus } from "../types/User";
+import { UserStatus, defaultUser } from "../types/User";
 
 const Profile: Component<{}> = () => {
-  const [state] = useAuth();
+  const user = defaultUser;
 
   return (
     <section>
-      <h2>Profile - {state.user.username}</h2>
+      <h2>Profile - {user.username}</h2>
       <ul>
-        <li>Email: {state.user.email}</li>
-        <li>Status: {UserStatus[state.user.status]}</li>
+        <li>Email: {user.email}</li>
+        <li>Status: {UserStatus[user.status]}</li>
       </ul>
     </section>
   );
